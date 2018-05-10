@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.regist">
+
+	<insert id="regist" parameterType="java.util.HashMap"><!-- id是Servlet中函数名，参数上下对应的相同，和数据库中一致 -->
+		insert into regist (name,password,email)
+		values (#{name},#{password},#{email})
+	</insert>
+
+</mapper>

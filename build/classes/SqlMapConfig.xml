@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE configuration    
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!-- 和spring整合后 environments配置将废除 -->
+	<environments default="development">
+		<environment id="development">
+			<!-- 使用jdbc事务管理 -->
+			<transactionManager type="JDBC" />
+			<!-- 数据库连接池 -->
+			<dataSource type="POOLED">
+				<!--mysql值 com.mysql.jdbc.Driver -->
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<!-- mysql url值 jdbc:mysql://IP或主机名:端口号（默认为3306）/库名?characterEncoding=utf-8 -->
+
+				<property name="url"
+					value="jdbc:mysql://localhost:3306/mytest?characterEncoding=utf-8" />
+				<!-- 连库用户名 -->
+				<property name="username" value="root" />
+				<!-- 连库密码 -->
+				<!-- <property name="password" value="anxiufang" /> -->
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper class="com.test.regist" />
+	</mappers>
+
+</configuration>  
